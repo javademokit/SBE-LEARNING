@@ -1,0 +1,4 @@
+Java,Learn Java from scratch,49.99,ESP32COOPS
+C++,Master C++ programming,39.99,ESP32C
+Linux,Learn Linux commands and shell scripting,29.99,ESP32CPLUS
+ESP32,IoT development with ESP32,59.99,ESP32COOPS
