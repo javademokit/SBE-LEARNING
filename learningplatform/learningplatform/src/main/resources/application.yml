@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: learning-platform
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/spring_auth_db
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sbblearningauthor@gmail.com
+    password: "nxoj fzzb uwfs wuyn"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+          ssl:
+            trust: smtp.gmail.com
+        debug: true
+
+server:
+  tomcat:
+    relaxed-cookies: true
+
+  servlet:
+    session:
+      persistent: false
+
+razorpay:
+  key_id: AC08a324ebbcd15943a4663c041f34dc0f
+  key_secret: AC08a324ebbcd15943a4663c041f34dc0f

@@ -44,7 +44,11 @@ public class SecurityConfig {
                                 "api/routes/**",
                                 "api/routes/all",
                                 "/api/routes/paths",
-                                "/api/admin/block/**"
+                                "/api/admin/block/**",
+                                "/metrics/api",
+                                "/rate-limit/metrics",
+                                "/rate-limit/admin"
+
                         ).permitAll()
                         .requestMatchers("/api/admin/dashboard").hasRole("ADMIN")
                         .anyRequest().authenticated()
@@ -55,6 +59,9 @@ public class SecurityConfig {
                         .logoutUrl("/api/auth/logout")
                         .logoutSuccessHandler(customLogoutSuccessHandler)
                         .deleteCookies("JSESSIONID")
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true)
+
                         .permitAll()
                 );
 

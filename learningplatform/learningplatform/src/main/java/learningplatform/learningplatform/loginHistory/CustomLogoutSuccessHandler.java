@@ -25,9 +25,24 @@ public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {
         if (auth != null) {
             String username = auth.getName();
             String ip = request.getRemoteAddr();
-            repo.save(new LoginHistory(username, ip, "LOGOUT"));
+            repo.save(new LoginHistory(username, getClientIp(ip), "LOGOUT"));
             System.out.println("🚪 User logged out: " + username + " from " + ip);
         }
         response.setStatus(HttpServletResponse.SC_OK);
+    }
+
+    private String getClientIp(String request) {
+        String xff = request;
+        if (xff != null && !xff.isEmpty()) {
+            return xff.split(",")[0].trim();
+        }
+
+        String realIp = request;
+        if (realIp != null && !realIp.isEmpty()) {
+            return realIp;
+        }
+
+        String ip = request;
+        return "0:0:0:0:0:0:0:1".equals(ip) ? "127.0.0.1" : ip;
     }
 }

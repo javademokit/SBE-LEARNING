@@ -17,6 +17,9 @@ import java.nio.charset.StandardCharsets;
 
 @SpringBootApplication
 public class SimpleAuthApplication {
+
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(SimpleAuthApplication.class, args);
 	}

@@ -22,8 +22,23 @@ public class LoginSuccessListener implements ApplicationListener<AuthenticationS
     public void onApplicationEvent(AuthenticationSuccessEvent event) {
         String username = event.getAuthentication().getName();
         String ip = request.getRemoteAddr();
-        LoginHistory history = new LoginHistory(username, ip, "LOGIN");
+        LoginHistory history = new LoginHistory(username, getClientIp(ip), "LOGIN");
         loginHistoryRepository.save(history);
         System.out.println("✅ User login tracked: " + username + " from " + ip);
+    }
+
+    private String getClientIp(String request) {
+        String xff = request;
+        if (xff != null && !xff.isEmpty()) {
+            return xff.split(",")[0].trim();
+        }
+
+        String realIp = request;
+        if (realIp != null && !realIp.isEmpty()) {
+            return realIp;
+        }
+
+        String ip = request;
+        return "0:0:0:0:0:0:0:1".equals(ip) ? "127.0.0.1" : ip;
     }
 }
