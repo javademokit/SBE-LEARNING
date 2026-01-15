@@ -1,0 +1,787 @@
+{
+	"info": {
+		"_postman_id": "08f3f26b-8343-402d-8db4-6757a667f801",
+		"name": "learning-secuirty-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42431442"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"john\",\"password\":\"mypassword\",\"email\":\"john@test.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/api/auth/signup \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\"username\":\"john\",\"password\":\"mypassword\",\"email\":\"john@test.com\"}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/welcome",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "cookies.txt"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/welcome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"welcome"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8080/api/auth/welcome -b cookies.txt\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "cookies.txt"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/api/auth/logout -b cookies.txt\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"john\",\"password\":\"mypassword\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/api/auth/login \\\r\n -H \"Content-Type: application/json\" \\\r\n -d '{\"username\":\"john\",\"password\":\"mypassword\"}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/courses/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/courses/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses",
+						"all"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:8080/api/courses/all\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/courses/buy/<COURSE_ID>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "cookies.txt"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/courses/buy/68fbc5111484e82125cb375b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses",
+						"buy",
+						"68fbc5111484e82125cb375b"
+					]
+				},
+				"description": "Generated from cURL: curl -b cookies.txt -X POST http://localhost:8080/api/courses/buy/<COURSE_ID>\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/courses/my",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "cookies.txt"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/courses/my",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses",
+						"my"
+					]
+				},
+				"description": "Generated from cURL: curl -b cookies.txt http://localhost:8080/api/courses/my\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/subscribe?email=user@example.com",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/subscribe?email=user@example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"subscribe"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "user@example.com"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/subscribe?email=user@example.com\"\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/news/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"Spring Boot 3.3 Released\",\"content\":\"New features in Spring Boot!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/news/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"news",
+						"add"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST -H \"Content-Type: application/json\" \\\r\n  -d '{\"title\":\"Spring Boot 3.3 Released\",\"content\":\"New features in Spring Boot!\"}' \\\r\n  http://localhost:8080/api/news/add\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "cookies.txt"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				},
+				"description": "Generated from cURL: curl -b cookies.txt -X POST http://localhost:8080/api/auth/logout\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"admin\",\"email\":\"admin@example.com\",\"password\":\"admin123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST -H \"Content-Type: application/json\" \\\r\n-d '{\"username\":\"admin\",\"email\":\"admin@example.com\",\"password\":\"admin123\"}' \\\r\nhttp://localhost:8080/api/auth/signup\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/dashbord",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/dashboard1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"dashboard1"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST -H \"Content-Type: application/json\" \\\r\n-d '{\"username\":\"admin\",\"email\":\"admin@example.com\",\"password\":\"admin123\"}' \\\r\nhttp://localhost:8080/api/auth/signup\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/dashbord Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"admin\",\"email\":\"admin@example.com\",\"password\":\"admin123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"dashboard"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST -H \"Content-Type: application/json\" \\\r\n-d '{\"username\":\"admin\",\"email\":\"admin@example.com\",\"password\":\"admin123\"}' \\\r\nhttp://localhost:8080/api/auth/signup\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"admin\",\"password\":\"admin123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl -i -c cookies.txt -X POST -H \"Content-Type: application/json\" \\\r\n-d '{\"username\":\"admin\",\"password\":\"admin123\"}' \\\r\nhttp://localhost:8080/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=<session-id>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"React Basics\",\"description\":\"Learn React\",\"price\":200}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"add"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/admin/add\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  --cookie \"JSESSIONID=<session-id>\" \\\r\n  -d '{\"title\":\"React Basics\",\"description\":\"Learn React\",\"price\":200}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/add Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=<session-id>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"React Basics\",\"description\":\"Learn React\",\"price\":200}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"add"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/admin/add\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  --cookie \"JSESSIONID=<session-id>\" \\\r\n  -d '{\"title\":\"React Basics\",\"description\":\"Learn React\",\"price\":200}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/deleteuser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=<session-id>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"React Basics\",\"description\":\"Learn React\",\"price\":200}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/delete/slb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"delete",
+						"slb"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/admin/add\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  --cookie \"JSESSIONID=<session-id>\" \\\r\n  -d '{\"title\":\"React Basics\",\"description\":\"Learn React\",\"price\":200}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/block",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=<session-id>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"React Basics\",\"description\":\"Learn React\",\"price\":200}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/delete/slb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"delete",
+						"slb"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/admin/add\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  --cookie \"JSESSIONID=<session-id>\" \\\r\n  -d '{\"title\":\"React Basics\",\"description\":\"Learn React\",\"price\":200}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/courses/<courseId>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=<session-id>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/courses/<courseId>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"courses",
+						"<courseId>"
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE \"http://localhost:8080/api/admin/courses/<courseId>\" \\\r\n  --cookie \"JSESSIONID=<session-id>\""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/courses/<courseId> Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=<session-id>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/logins/sb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"logins",
+						"sb"
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE \"http://localhost:8080/api/admin/courses/<courseId>\" \\\r\n  --cookie \"JSESSIONID=<session-id>\""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/courses/<courseId> Copy 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=<session-id>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/courses/all/java",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses",
+						"all",
+						"java"
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE \"http://localhost:8080/api/admin/courses/<courseId>\" \\\r\n  --cookie \"JSESSIONID=<session-id>\""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/courses/<courseId> Copy 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=<session-id>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/sms/send?to=9036394577&message=hello shyam",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sms",
+						"send"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "9036394577"
+						},
+						{
+							"key": "message",
+							"value": "hello shyam"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE \"http://localhost:8080/api/admin/courses/<courseId>\" \\\r\n  --cookie \"JSESSIONID=<session-id>\""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"path\": \"ESP32\",\r\n  \"component\": \"ESP32\",\r\n  \"title\": \"ESP32 Course\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/routes/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"routes",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/routes/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"routes",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
