@@ -36,3 +36,17 @@ server:
 razorpay:
   key_id: AC08a324ebbcd15943a4663c041f34dc0f
   key_secret: AC08a324ebbcd15943a4663c041f34dc0f
+
+resilience4j:
+  thread-pool-bulkhead:
+    instances:
+
+      paymentService:
+        core-thread-pool-size: 2
+        max-thread-pool-size: 2
+        queue-capacity: 2
+
+      orderService:
+        core-thread-pool-size: 5
+        max-thread-pool-size: 5
+        queue-capacity: 5
